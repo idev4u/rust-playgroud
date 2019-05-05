@@ -6,8 +6,12 @@ use std::fmt;
 pub struct DisplayStruct(i32);
 
 impl DisplayStruct {
+    // Constructor
     pub fn new() -> DisplayStruct {
         DisplayStruct(4)
+    }
+    pub fn new_with_value(value: i32) -> DisplayStruct {
+        DisplayStruct(value)
     }
 }
 

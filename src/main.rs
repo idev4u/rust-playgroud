@@ -54,6 +54,8 @@ fn debug_examples() {
 // display example
 
 fn display_example() {
-    let MyDisplay = displays::DisplayStruct::new();
-    println!("Display {} DisplayStructure", MyDisplay);
+    let my_display = displays::DisplayStruct::new();
+    println!("Display {} DisplayStructure", my_display);
+    let my_custom_display = displays::DisplayStruct::new_with_value(7);
+    println!("Display {} DisplayStructure", my_custom_display);
 }
