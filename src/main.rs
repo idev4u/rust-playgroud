@@ -1,9 +1,10 @@
 fn main() {
     println!("Hello, world!");
-    test();
+    print_examples();
+    debug_examples();
 }
 
-fn test() {
+fn print_examples() {
     let name = "Bricktop";
     println!("Hello from test");
     // print formatter
@@ -21,4 +22,28 @@ fn test() {
     // handling. This will not work.
     println!("This struct `{:?}` won't print...", Structure(3));
     // FIXME ^ Comment out this line.
+}
+
+// Derive the `fmt::Debug` implementation for `Structure`. `Structure`
+// is a structure which contains a single `i32`.
+#[derive(Debug)]
+struct DebugStructure(i32);
+
+// Put a `Structure` inside of the structure `Deep`. Make it printable
+// also.
+#[derive(Debug)]
+struct Deep(DebugStructure);
+
+fn debug_examples() {
+    // Printing with `{:?}` is similar to with `{}`.
+    println!("{:?} ok some integer value", 21);
+    println!(
+        "{1:?} {0:?} is the {actor:?} name.",
+        "Slater",
+        "Christian",
+        actor = "actor's"
+    );
+
+    println!("Now is {:?} printable", DebugStructure(3));
+    println!("Now is {:?} printable", Deep(DebugStructure(7)));
 }
