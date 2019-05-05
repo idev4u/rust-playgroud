@@ -1,7 +1,10 @@
+mod displays;
+
 fn main() {
     println!("Hello, world!");
     print_examples();
     debug_examples();
+    display_example();
 }
 
 fn print_examples() {
@@ -46,4 +49,11 @@ fn debug_examples() {
 
     println!("Now is {:?} printable", DebugStructure(3));
     println!("Now is {:?} printable", Deep(DebugStructure(7)));
+}
+
+// display example
+
+fn display_example() {
+    let MyDisplay = displays::DisplayStruct::new();
+    println!("Display {} DisplayStructure", MyDisplay);
 }
