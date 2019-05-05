@@ -13,9 +13,9 @@ fn test() {
 
     // disable the linter
     #[allow(dead_code)]
+    #[derive(Debug)]
     struct Structure(i32);
     // add the debug formatter for print
-    #[derive(Debug)]
 
     // However, custom types such as this structure require more complicated
     // handling. This will not work.
